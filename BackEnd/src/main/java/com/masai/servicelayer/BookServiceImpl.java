@@ -107,6 +107,16 @@ public class BookServiceImpl implements BookService {
 			throw new BookNotFound("no such book");
 	}
 
+	@Override
+	public List<BookDTO> getAllBookDTOByName(String name) throws BookNotFound {
+		List<BookDTO> list = repo.findBookByName(name);
+		
+		if(list.size()== 0)
+			throw new BookNotFound("sorry no products");
+		else
+			return list;
+	}
+
 	
 
 

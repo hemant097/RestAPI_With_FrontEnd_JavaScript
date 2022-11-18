@@ -23,10 +23,16 @@ table {
     text-align: center;
   }
   #adddel{
-      text-align: right;
-      margin: auto;
-      width: 90%;
+      display: flex;
+      justify-content: space-around;
+      border: 2px solid gray;
+    background-color: teal;
+ 
   }
+  #adddel a{
+    text-decoration: underline;
+    color: white;
+}
   h2{
     text-align: center;
   }

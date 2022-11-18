@@ -1,9 +1,7 @@
 package com.masai.controllers;
 
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,19 +14,22 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.masai.exceptions.BookNotFound;
 import com.masai.model.Book;
 import com.masai.servicelayer.BookService;
 
 @RestController
 @RequestMapping("/author")
+@CrossOrigin(origins = "http://127.0.0.1:5500/")
 public class AuthorController {
 
 	@Autowired
 	BookService bookService;
 
-	@CrossOrigin(origins = "http://127.0.0.1:5500/")
+	/*we can add the class level CrossOrigin, to enable CORS on all handler 
+	 * methods of this class.
+	*/
+	
 	@GetMapping("/book")
 	public  ResponseEntity<List<Book>> AllBooks() throws BookNotFound{
 
@@ -45,7 +46,7 @@ public class AuthorController {
 		return new ResponseEntity<>(b,HttpStatus.ACCEPTED);
 	}
 	
-	@CrossOrigin(origins = "http://127.0.0.1:5500/")
+	//@CrossOrigin(origins = "http://127.0.0.1:5500/")
 	@PostMapping(value= "/savebook")
 	public ResponseEntity<Book>createBook(@Valid @RequestBody Book b) throws BookNotFound {
 		
@@ -53,7 +54,7 @@ public class AuthorController {
 		
 		return new ResponseEntity<Book>(added,HttpStatus.ACCEPTED);
 	}
-	@CrossOrigin(origins = "http://127.0.0.1:5500/")
+
 	@PutMapping(value= "/updatebook/{id}")
 	public ResponseEntity<Book> updateBook(@Valid @RequestBody Book b,
 																  @PathVariable("id") Integer ID) 
@@ -64,7 +65,7 @@ public class AuthorController {
 		return new ResponseEntity<>(updated,HttpStatus.ACCEPTED);
 	}
 	
-	@CrossOrigin(origins = "http://127.0.0.1:5500/")
+
 	@DeleteMapping(value= "/delete/{id}")
 	public ResponseEntity<Book> deleteBook( @PathVariable("id") Integer ID) throws BookNotFound {
 		

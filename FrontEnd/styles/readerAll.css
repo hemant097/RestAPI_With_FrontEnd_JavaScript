@@ -1,0 +1,31 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  table {
+      border-collapse: collapse;
+      width: 65%;
+      margin: auto;
+      margin-top: 50px;
+      text-align: center;
+    }
+    table td,
+    table th {
+      border: 1px solid rgb(37, 34, 34);
+      padding: 8px;
+      text-align: center;
+    }
+    table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #5daa04;
+      color: white;
+      text-align: center;
+    }
+    #adddel{
+        display: flex;
+        justify-content: space-around;
+    }
+    h2{
+      text-align: center;
+    }

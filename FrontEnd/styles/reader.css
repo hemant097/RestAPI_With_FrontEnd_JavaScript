@@ -1,0 +1,30 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+#container{
+    display: grid;
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 15px;
+}
+#adddel{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid gray;
+    background-color: teal;
+    
+}
+#adddel a{
+    text-decoration: underline;
+    color: white;
+}
+#container>div{
+    border: 1px solid red;
+    text-align: center;
+}
+#reader{
+    text-align: center;
+}

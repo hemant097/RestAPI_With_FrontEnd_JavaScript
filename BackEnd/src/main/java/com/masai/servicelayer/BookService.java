@@ -21,6 +21,8 @@ public interface BookService {
 	
 	public List<BookDTO> getAllBookDTO() throws BookNotFound;
 	
+	public List<BookDTO> getAllBookDTOByName(String name) throws BookNotFound;
+	
 	public BookDTO findBookDTOById(Integer bId) throws BookNotFound;
 	
 }

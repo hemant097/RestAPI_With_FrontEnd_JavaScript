@@ -18,9 +18,15 @@ public interface BookDAO extends JpaRepository<Book, Integer> {
 			+ "b.price,b.name,b.author,b.publication,b.category) from Book b")
 	public List<BookDTO> findBookDTOall();
 	
+	@Query(value = "select new com.masai.model.BookDTO(b.pages,"
+			+ "b.price,b.name,b.author,b.publication,b.category) from Book b "
+			+ "where b.name like %?1% or b.author like %?1%" )
+	public List<BookDTO> findBookByName(String name);
+	
 	
 	@Query(value = "select new com.masai.model.BookDTO(b.pages,"
-			+ "b.price,b.name,b.author,b.publication,b.category) from Book b")
+			+ "b.price,b.name,b.author,b.publication,b.category) from Book b "
+			+ "where b.bookid=?1")
 	public BookDTO findBookDTObyId(Integer id);
 	
 	
