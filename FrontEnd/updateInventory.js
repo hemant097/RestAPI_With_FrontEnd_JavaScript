@@ -15,6 +15,7 @@ function catchFromForm(){
 //console.log(formObj);
 let bookid = adminForm.bookid.value;
 
+//as the form value is always a string(if input box is left blank it will give "") so checking for null or undefined wont work here
         if(bookid.length==0)
         addBookInDB(formObj);
         else{
