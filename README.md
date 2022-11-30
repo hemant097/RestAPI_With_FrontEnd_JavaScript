@@ -5,9 +5,9 @@ After cloning this repo start the springboot application and at the same time st
 
 ## Features
 
-Admin can see all the books and the book related data
-Admin can delete the books
-Admin can add new book
-Admin can update the books
-User can see the books (but not all the data, author_id, book_no are hidden)
+1. Admin can see all the books and the book related data
+2. Admin can delete the books
+3. Admin can add new book
+4. Admin can update the books
+5. User can see the books (but not all the data, author_id, book_no are hidden)
 
